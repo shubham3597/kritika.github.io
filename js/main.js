@@ -1,24 +1,50 @@
 ;(function () {
-	
+
 	'use strict';
 
-	// iPad and iPod detection	
+	// iPad and iPod detection
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
 	var isiPhone = function(){
 	    return (
-			(navigator.platform.indexOf("iPhone") != -1) || 
+			(navigator.platform.indexOf("iPhone") != -1) ||
 			(navigator.platform.indexOf("iPod") != -1)
 	    );
 	};
 
+//cake
+// Amazing flickering fire from Marco Barria
+// https://codepen.io/fixcl/pen/nKFDr
 
+$(document).ready(function(){
+  $("#Play").click(function(){
+    $(".play").addClass("hide");
+    $(".plate").addClass("appear");
+    $(".base-l").addClass("appear");
+    $(".base-i").addClass("appear");
+    $(".mid-l").addClass("appear");
+    $(".mid-i").addClass("appear");
+    $(".top-l").addClass("appear");
+    $(".top-i").addClass("appear");
+    $(".icing-tip").addClass("appear");
+    $(".top-i-1").addClass("pourdown1");
+    $(".top-i-2").addClass("pourdown2");
+    $(".top-i-3").addClass("pourdown3");
+    $(".top-i-4").addClass("pourdown4");
+    $(".top-i-5").addClass("pourdown5");
+    $(".top-i-6").addClass("pourdown6");
+    $(".top-i-7").addClass("pourdown7");
+    $(".top-i-8").addClass("pourdown8");
+    $(".top-i-9").addClass("pourdown9");
+    $(".candle").addClass("appear");
+  });
+});
 
 	// Carousel Feature Slide
 	var testimonialCarousel = function(){
-		
+
 		var owl = $('.owl-carousel-fullwidth');
 		owl.owlCarousel({
 			animateOut: 'fadeOut',
@@ -33,7 +59,7 @@
 	};
 
 	var sliderMain = function() {
-		
+
 	  	$('#qbootstrap-slider-hero .flexslider').flexslider({
 			animation: "fade",
 			slideshowSpeed: 5000,
@@ -63,9 +89,9 @@
 		$('.animate-box').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this).hasClass('animated') ) {
-			
+
 				$(this.element).addClass('fadeInUp animated');
-			
+
 			}
 
 		} , { offset: '75%' } );
@@ -79,13 +105,13 @@
 		$('body').on('click', '.js-qbootstrap-nav-toggle', function(event){
 
 			if ( $('#navbar').is(':visible') ) {
-				$(this).removeClass('active');	
+				$(this).removeClass('active');
 			} else {
-				$(this).addClass('active');	
+				$(this).addClass('active');
 			}
 
 			event.preventDefault();
-			
+
 		});
 
 	};
@@ -135,11 +161,11 @@
 	var navigationSection = function() {
 
 		var $section = $('div[data-section]');
-		
+
 		$section.waypoint(function(direction) {
 		  	if (direction === 'down') {
 		    	navActive($(this.element).data('section'));
-		    
+
 		  	}
 		}, {
 		  	offset: '150px'
@@ -174,8 +200,8 @@
 						header.removeClass('navbar-fixed-top qbootstrap-animated slideInDown slideOutUp');
 					}, 100 );
 				}
-			} 
-			
+			}
+
 		});
 	};
 
@@ -187,7 +213,7 @@
 		$('.animate-box').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -210,9 +236,9 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
+
 				}, 50);
-				
+
 			}
 
 		} , { offset: '85%' } );
@@ -249,10 +275,10 @@
 
 		});
 	};
-	
+
 
 	// Set the date we're counting down to
-		var countDownDate = new Date("Dec 02, 2017 15:37:25").getTime();
+		var countDownDate = new Date("Feb 21, 1998 00:00:01").getTime();
 
 		// Update the count down every 1 second
 		var x = setInterval(function() {
@@ -261,7 +287,7 @@
 		var now = new Date().getTime();
 
 		// Find the distance between now an the count down date
-		var distance = countDownDate - now;
+		var distance = now - countDownDate;
 
 		// Time calculations for days, hours, minutes and seconds
 		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -279,18 +305,18 @@
 		document.getElementById("minutes").innerHTML = minutes + " <small>minutes</small> ";
 		document.getElementById("seconds").innerHTML = seconds + " <small>seconds</small> ";
 
-		// If the count down is finished, write some text 
+		// If the count down is finished, write some text
 		if (distance < 0) {
 		 clearInterval(x);
 		 document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
 		}
-		}, 1000);	
-	
-		
+		}, 1000);
+
+
 	var bgVideo = function() {
 		$('.player').mb_YTPlayer();
 	};
-        
+
 
 	// Document on load.
 	$(function(){
