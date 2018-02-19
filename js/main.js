@@ -13,7 +13,9 @@
 			(navigator.platform.indexOf("iPod") != -1)
 	    );
 	};
+ //happy BIRTHDAY
 
+//HAPPY BIRTHDAY
 
 	// Carousel Feature Slide
 	var testimonialCarousel = function(){
